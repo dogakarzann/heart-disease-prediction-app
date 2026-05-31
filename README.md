@@ -87,6 +87,4 @@ Initially conceived as an Exploratory Data Analysis and baseline modeling projec
 - **Large Language Model**: LLaMA 3.2 (via Ollama)
 - **PDF Report Generation**: FPDF (A Python library used to automatically generate and format the downloadable patient medical reports directly from the web interface).
 
-## Contributing
 
-Contributions, issues, and feature requests are welcome. Feel free to check the issues page.

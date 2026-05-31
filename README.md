@@ -40,7 +40,7 @@ Initially conceived as an Exploratory Data Analysis and baseline modeling projec
 - `generate_thesis_figures.py`: A utility script for generating high-resolution EDA and model performance figures.
 - `artifacts/`: Directory storing the trained serialized models, preprocessors, and evaluation metrics (`model.pkl`, `preprocessor.pkl`, etc.).
 - `thesis_figures/`: Contains the generated plots and UI screenshots used in the project documentation.
-- `data/`: Contains the dataset used for training (`heart_disease_uci.csv`).
+- `data/`: Contains the dataset used for training (`heart_disease_uci.csv`), sourced from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/45/heart+disease).
 
 ## Installation and Setup
 

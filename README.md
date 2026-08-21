@@ -1,6 +1,8 @@
 # Heart Disease Risk Prediction Application
 
-A comprehensive Clinical Decision Support System (CDSS) for predicting heart disease risk based on patient clinical data. This project combines thorough Exploratory Data Analysis (EDA), ensemble machine learning models, Explainable AI (SHAP), and an interactive Large Language Model (LLaMA) powered medical assistant into a unified Streamlit web application.
+**Live Demo:** https://heart-disease-prediction-app.streamlit.app
+
+A comprehensive Clinical Decision Support System (CDSS) for predicting heart disease risk based on patient clinical data. This project combines thorough Exploratory Data Analysis (EDA), ensemble machine learning models, Explainable AI (SHAP), and an interactive Large Language Model powered medical assistant into a unified Streamlit web application.
 
 ## Overview
 
@@ -14,7 +16,7 @@ Initially conceived as an Exploratory Data Analysis and baseline modeling projec
 
 ### 2. AI Medical Assistant (Chatbot)
 ![Chatbot Interface](thesis_figures/chatbot_web2.png)
-*To assist patients and healthcare providers further, a locally hosted **LLaMA 3.2** model acts as an intelligent medical assistant. It analyzes the patient's specific inputs and risk score to provide personalized, natural language answers about cardiovascular health.*
+*To assist patients and healthcare providers further, a cloud-based **Qwen 27B** model via Groq API acts as an intelligent medical assistant. It analyzes the patient's specific inputs and risk score to provide personalized, natural language answers about cardiovascular health.*
 
 ### 3. Model Comparison Dashboard
 ![Model Comparison](thesis_figures/model_comparision.web3.png)
@@ -30,7 +32,7 @@ Initially conceived as an Exploratory Data Analysis and baseline modeling projec
 - **Ensemble Machine Learning**: The predictive engine utilizes a Soft Voting Ensemble combining Random Forest, XGBoost, and Support Vector Classifier (SVC). The final model achieves a strong diagnostic performance (Accuracy: 93.2%, ROC-AUC: 97.3%).
 - **Interactive Patient Dashboard**: A dynamic Streamlit interface allowing for real-time risk assessment, featuring intuitive Risk Gauges and Radar Charts that compare patient vitals against healthy population averages.
 - **Explainable AI (SHAP)**: Feature-level impact visualizations are generated for every prediction, explaining exactly why a patient was classified into a specific risk category.
-- **AI Medical Assistant**: An integrated context-aware chatbot powered by the LLaMA 3.2 model (running locally via Ollama).
+- **AI Medical Assistant**: An integrated context-aware chatbot powered by the Qwen 27B model (via Groq API).
 - **Automated Medical Reporting**: One-click generation of professional PDF reports summarizing the clinical data and the AI's risk assessment.
 
 ## Project Structure
@@ -46,7 +48,7 @@ Initially conceived as an Exploratory Data Analysis and baseline modeling projec
 
 ### Prerequisites
 - Python 3.9+
-- [Ollama](https://ollama.com/) (Required for the local LLaMA 3.2 Chatbot)
+- A valid [Groq API Key](https://console.groq.com/keys) (Required for the AI Chatbot)
 
 ### Setup Instructions
 
@@ -63,9 +65,9 @@ Initially conceived as an Exploratory Data Analysis and baseline modeling projec
    pip install -r requirements.txt
    ```
 
-3. Ensure Ollama is running in the background and pull the required model:
+3. Configure your API key by creating a `.env` file in the root directory:
    ```bash
-   ollama pull llama3.2
+   echo "GROQ_API_KEY=your_groq_api_key_here" > .env
    ```
 
 4. Run the model training pipeline (if you wish to retrain the models):
@@ -84,7 +86,7 @@ Initially conceived as an Exploratory Data Analysis and baseline modeling projec
 - **Machine Learning**: XGBoost, Scikit-Learn (Random Forest, SVC, Voting Classifier)
 - **Explainability**: SHAP
 - **Web Interface**: Streamlit, Plotly
-- **Large Language Model**: LLaMA 3.2 (via Ollama)
+- **Large Language Model**: Qwen 27B (via Groq API)
 - **PDF Report Generation**: FPDF (A Python library used to automatically generate and format the downloadable patient medical reports directly from the web interface).
 
 
